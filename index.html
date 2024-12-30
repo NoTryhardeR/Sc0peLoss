@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sc0peLoss-CyberSecurity</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">  <!-- Adding bootstrap -->
+    <link rel="stylesheet" href="styles.css">  <!-- Link our CSS   -->
 </head>
 <body>
     <!-- Navbar -->
@@ -17,11 +17,16 @@
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
+        <div class="collapse navbar-collapse" id="navbarNav"> <!-- creation and declaration of navigation bar with burger menu while the page getting sized -->
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Products</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Cart</a></li>
+                <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#products">Products</a></li>
+                <li class="nav-item"><a class="nav-link" href="#about-us">About Us</a></li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#cart" data-toggle="modal" data-target="#cart-modal">
+                        Cart (<span id="cart-count">0</span>)  <!-- Display the ammount of products inside the cart -->
+                    </a>
+                </li>
             </ul>
         </div>
     </nav>
@@ -30,51 +35,107 @@
     <div class="jumbotron text-center">
         <h1>Welcome to Sc0peLoss!</h1>
         <p><u class="Selling-spot">! Find the best CyberSecurity Services that suit you !</u></p>
-        <a href="#" class="btn btn-primary btn-shop">Shop Now</a>
+        <a href="#products" class="btn btn-primary btn-shop">Shop Now</a>
     </div>
 
     <!-- Product Section -->
-    <div class="container">
-        <div class="row">
-            <!-- Product Card 1 -->
-            <div class="col-md-4">
-                <div class="card">
-                    <img src="https://via.placeholder.com/150" class="card-img-top" alt="Product 1">
-                    <div class="card-body">
-                        <h5 class="card-title">Product 1</h5>
-                        <p class="card-text">$19.99</p>
-                        <button class="btn btn-primary add-to-cart">Add to Cart</button>
+    <section class="products" id="products">
+        <div class="container">
+            <div class="row">
+                <!-- Product Card 1 -->
+                <div  class="col-md-4">
+                    <div class="card">
+                        <img src="bugbounty.jpg" class="bug-bounty" alt="Bug-bounty">
+                        <div class="card-body">
+                            <h5 class="card-title">Bug-bounty</h5>
+                            <p>Bug Bounty Program. <br>  <!-- Every product has a small paragraph to present her self to the client -->
+                            Our Bug Bounty service enables ethical hackers to identify and report vulnerabilities in your website before malicious actors exploit them. This proactive approach ensures enhanced security and peace of mind while fostering collaboration with the global cybersecurity community.</p>
+                            <p class="card-text">$49.99-$149.99</p>
+                            <p  id="price-Warning" class="price-Warning">!(The price gonna  be adjusted to the workload of System-Network)</p>
+                            <button id="add-to-cart" class="btn btn-primary add-to-cart">Add to Cart</button>
+                        </div>
                     </div>
                 </div>
-            </div>
             <!-- Product Card 2 -->
             <div class="col-md-4">
                 <div class="card">
-                    <img src="https://via.placeholder.com/150" class="card-img-top" alt="Product 2">
+                    <img src="pentration test.jpg" class="card-img-top" alt="Penetration Testing">
                     <div class="card-body">
-                        <h5 class="card-title">Product 2</h5>
-                        <p class="card-text">$29.99</p>
-                        <button class="btn btn-primary add-to-cart">Add to Cart</button>
+                        <h4 class="card-title">Penetration Testing</h4>
+                        <p>Penetration Testing in Systems and Networks. <br>
+                        With our Penetration Testing service, we simulate real-world cyberattacks to uncover and address vulnerabilities within your systems and networks. This comprehensive analysis strengthens your infrastructure and safeguards critical data from unauthorized access.</p>
+                        <p class="card-text">$99.99-$199.99</p>
+                        <p  id="price-Warning" class="price-Warning">!(The price gonna  be adjusted to the workload of System-Network)</p>
+                        <button  id="add-to-cart" class="btn btn-primary add-to-cart">Add to Cart</button>
                     </div>
                 </div>
             </div>
             <!-- Product Card 3 -->
             <div class="col-md-4">
                 <div class="card">
-                    <img src="https://via.placeholder.com/150" class="card-img-top" alt="Product 3">
+                    <img src="Vulnerability.webp" class="Vulnerability" alt="Vulnerability Assessments">
                     <div class="card-body">
-                        <h5 class="card-title">Product 3</h5>
-                        <p class="card-text">$39.99</p>
-                        <button class="btn btn-primary add-to-cart">Add to Cart</button>
+                        <h5 class="card-title">Vulnerability Assessments</h5>
+                        <p>Yearly Vulnerability Assessments.<br>
+                        Our Yearly Vulnerability Assessment service provides consistent evaluations of your digital assets, ensuring continuous improvement in your security posture. Through detailed reports and actionable insights, we help you mitigate risks and maintain compliance year-round.</p>
+                        <p class="card-text">$399.99-$499.99</p>
+                        <p  id="price-Warning" class="price-Warning">!(The price gonna  be adjusted to the workload of System-Network)</p>
+                        <button id="add-to-cart" class="btn btn-primary add-to-cart">Add to Cart</button>
                     </div>
                 </div>
             </div>
         </div>
+        </div>
+    </section>  
+    <!-- Cart Modal -->
+    <div class="modal fade" id="cart-modal" tabindex="-1" role="dialog" aria-labelledby="cart-modal-label" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">   <!-- Setting Up every variable that we gonna need to achieve the communication in the checkout page  -->
+                <div class="modal-header"> 
+                    <h5 class="modal-title" id="cart-modal-label">Your Cart</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" id="cart-items-container">
+                    <!-- Cart items will be displayed here -->
+                    <p>Your cart is empty.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="checkout-btn">Proceed to Checkout</button>
+                </div>
+            </div>
+        </div>
     </div>
-
+    
+    <!-- About us Section -->
+    <section class="about-us" id="about-us">
+        <div class="informations">
+                <h2 id="abt-ttl" class="abt-ttl">About Us.</h1> <!-- abt-ttl=about-title (used for css) -->
+                    <br>
+                 <h3>Our Mission.</h3>   
+                <p>At our Greek-based cybersecurity startup, we are committed to safeguarding your digital presence with cutting-edge solutions tailored to your needs. Specializing in bug bounty programs, penetration testing, and vulnerability assessments, we empower businesses and individuals to navigate the online world with confidence. By leveraging the latest advancements in cybersecurity technology, we identify and mitigate threats before they become critical, ensuring a safe and seamless internet experience for all.
+                <br>
+                <h3>Why to choose us?</h3>
+                What sets us apart is our unwavering dedication to building meaningful relationships with our clients. Rooted in the famed Greek tradition of hospitality, we approach every partnership with a personalized touch, treating your security as if it were our own. With a deep understanding of the ever-evolving cyber landscape, we stand ready to protect your digital assets, fostering trust and resilience in an increasingly interconnected world.</p>
+                <h3>Join Us!</h3>
+                    <!-- Add icon library -->
+                   
+                <i class="fab fa-facebook-square"></i>
+                <i class="fa fa-instagram" aria-hidden="true"></i>
+                <i class="fab fa-linkedin"></i>
+                <i class="fab fa-discord"></i>
+                <i class="fab fa-twitter"></i>  
+            
+        </div>
+    </section>
+    
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://kit.fontawesome.com/4838ece565.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
+
