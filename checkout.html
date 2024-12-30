@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">
+            <img src="Logo.png" alt="Scopeloss Logo" class="d-inline-block align-top">
+        </a>
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
+            <li class="nav-item"><a class="nav-link" href="checkout.html">Checkout</a></li>
+        </ul>
+    </nav>
+
+    <!-- Checkout Section -->
+    <div class="container">
+        <h2>Checkout</h2>
+        <div id="checkout-items-container">
+            <!-- Checkout items will be displayed here -->
+        </div>
+        <button class="btn btn-primary" id="complete-purchase">Complete Purchase</button>
+    </div>
+
+    <script src="script.js"></script>
+    <script> //Implement js in one code bcs its only for the checkout
+        // Fetch cart items from localStorage and display them on the checkout page
+        function displayCheckout() {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];   //Get items from the cart to  transport into checkout
+            let checkoutContainer = document.getElementById('checkout-items-container');
+            checkoutContainer.innerHTML = '';
+
+            if (cart.length === 0) {
+                checkoutContainer.innerHTML = '<p>Your cart is empty.</p>';
+            } else {
+                cart.forEach(item => {  //Display the overall image of our cart
+                    checkoutContainer.innerHTML += `
+                        <div class="checkout-item">
+                            <h5>${item.name}</h5>
+                            <p>Price: $${item.price}</p>
+                            <p>Quantity: ${item.quantity}</p>
+                            <hr>
+                        </div>
+                    `;
+                });
+            }
+        }
+
+        // Call the displayCheckout function when the page loads
+        window.onload = displayCheckout;
+
+        // Handle completing the purchase
+        document.getElementById('complete-purchase').addEventListener('click', function() {
+            alert('Purchase completed! Thank you for shopping with us.');
+            localStorage.removeItem('cart'); // Clear the cart after purchase
+            window.location.href = 'index.html'; // Redirect to the homepage
+        });
+    </script>
+
+</body>
+</html>
