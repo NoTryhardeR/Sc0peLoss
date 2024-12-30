@@ -1,36 +1,91 @@
 body {
-    font-family: monaco,Consolas,Lucida Console,monospace;
+    font-family: monaco,Consolas,Lucida Console,monospace;  
     background-color: white;
-    padding-bottom: 20px;
+    /* setting white body to have color near blue to represent the greece and the island moprh */
 }
 
 .jumbotron {
-    background-color: #00ADB5;
+    background-image: linear-gradient(#00ADB5, white); /*indroduction to the Site*/
     color: #f3f6f8;
     margin-bottom: 30px;
 }
 
 .card {
     margin-bottom: 20px;
+    background-image: linear-gradient(white,#90f0f5, white); /*Use gradient to make more aesthtic the view of products*/
 }
 
 .navbar-brand {
-    font-size: larger;
+    font-size: larger;  /* nav bar view*/
     font-weight: bold;
 }
 
 .add-to-cart{
-    background-color: #00ADB5;
-    border-color: #00ADB5;
+    background-color: #01383b;
+    border-color: #022d30;
     color: white;
 }
 
 .btn-shop{
-    background-color: white;
+    background-color: white;  /* add to cart button*/
     border-color: white;
     color: #00ADB5;
 }
 
 .Selling-spot{
     text-decoration-line: underline;
+}
+
+html{
+    scroll-behavior: smooth;
+    
+}
+.price-Warning{
+    font-family: Courier New, monospace;
+    color: red;
+}
+.about-us{
+    text-align: center;
+    background-image: linear-gradient(white, #00ADB5);
+}
+.h2{
+    text-align: center;
+    padding: auto;
+    
+}
+.fa-facebook-square{ /* Set the icons properly to be clear visible */
+    padding: 20px;
+  font-size: 30px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.fa-instagram{
+    padding: 20px;
+    font-size: 30px;
+    width: 50px;
+    text-align: center;
+    text-decoration: none;
+}
+.fa-linkedin{
+    padding: 20px;
+    font-size: 30px;
+    width: 50px;
+    text-align: center;
+    text-decoration: none;
+}
+.fa-discord{
+    padding: 20px;
+    font-size: 30px;
+    width: 50px;
+    text-align: center;
+    text-decoration: none;
+}
+.fa-twitter{
+    padding: 20px;
+    font-size: 30px;
+    width: 50px;
+    text-align: center;
+    text-decoration: none;
 }
